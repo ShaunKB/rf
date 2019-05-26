@@ -9,7 +9,7 @@ void Main(void)
   DWORD dw_max = 0x7FFFFF;
 
   while (FindWindow("Rumble Fighter", "Rumble Fighter") == NULL)
-    Sleep(2500);
+    std::this_thread::sleep_for(std::chrono::milliseconds(2500));
 
   DWORD nanmu_address = scanner::find_pattern(dw_min, dw_max, "C6 86 ? ? ? ? 01 53 8B CE E8 ? ? ? ? 8B");
   Hack* nanmu = new Hack(nanmu_address, "C6 86 A5", "C6 86 A4");
@@ -22,7 +22,9 @@ void Main(void)
   while (true) {
     if (GetAsyncKeyState(VK_F1) & 1) {
       nanmu->toggle();
+      // # waits for iteration over character state
       std::this_thread::sleep_for(std::chrono::milliseconds(250));
+      // # flip bytes back to avoid detection, nanmu counter reset to 1
       nanmu->toggle();
     }
     /*if (GetAsyncKeyState(VK_F2) & 1) {
