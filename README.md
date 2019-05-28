@@ -6,7 +6,10 @@ Very simplistic tool for RumbleFighter to for infinite Nanmu.
 
 Simply build the project and inject the library into the RumbleFighter client. When the client window is created, the library will initialize itself.
 
-Use the F1 key to reset your Nanmu counter. If you don't have Nanmu yet, this tool will enable it for you. A bypass is **not** required as we're flipping bytes back and forth.
+* Use the F1 key to reset your Nanmu counter. If you don't have Nanmu yet, this tool will enable it for you. A bypass is **not** required as we're flipping bytes back and forth.
+* The F2 key will suspend you in air if you get knocked off a map or accidently fall off. Pressing the key again will resume the client's regular physics.
+* To crash a room, use the F3 key. You must be in-game, press the key right before another player hits you and everyone but yourself will have their client crash.
+
 
 ## How it works
 
